@@ -8,9 +8,9 @@ known as **vertex reconstruction**.
 
 Instead of building everything from scratch, you'll start from a fully working
 baseline model. This allows us to focus on:
-- Understanding the physics and data,
-- Exploring the model's design,
-- Improve its performance, and
+- Understanding the physics and data.
+- Exploring the model's design.
+- Improve its performance.
 - Experiment with more advanced ideas.
 
 By the end of this tutorial, you'll have a clear picture of how deep learning
