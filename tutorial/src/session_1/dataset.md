@@ -54,3 +54,31 @@ python visualize.py target-z /path/to/dataset.parquet
 # Point cloud size distribution
 python visualize.py cloud-size /path/to/dataset.parquet
 ```
+
+## Iterating Through the Dataset with PyTorch
+
+To train a model, we need to iterate through the dataset. PyTorch provides a
+primitive
+[`torch.utils.data.Dataset`](https://docs.pytorch.org/tutorials/beginner/basics/data_tutorial.html)
+class that allows us to decouple the data loading from the model
+training/batching process.
+
+We've provided a
+[PyTorch-compatible dataset class](https://github.com/ALPHA-g-Experiment/ml-tutorial/blob/main/code/data/dataset.py).
+It wraps a `.parquet` file and gives you easy access to the data in a
+PyTorch-friendly way:
+
+```python
+from data.dataset import PointCloudDataset
+
+config = {"cloud_size": 140}
+dataset = PointCloudDataset("/path/to/dataset.parquet", config)
+
+point_cloud, target = dataset[0]
+```
+
+Try running the code above and plot some point clouds and their corresponding
+targets (annihilation vertices).
+- How does the `PointCloudDataset` handle variable-length point clouds?
+- After plotting some point clouds and their targets, would you be able to make
+  an educated guess about the target vertex position given a point cloud?
