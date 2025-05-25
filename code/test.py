@@ -5,6 +5,8 @@ import numpy as np
 import polars as pl
 import torch
 
+from tqdm import tqdm
+
 parser = argparse.ArgumentParser(
     description="Test a model", formatter_class=argparse.ArgumentDefaultsHelpFormatter
 )
@@ -22,7 +24,7 @@ model.eval()
 targets = []
 predictions = []
 with torch.no_grad():
-    for entry in pl.read_parquet(args.dataset).iter_rows(named=True):
+    for entry in tqdm(pl.read_parquet(args.dataset).iter_rows(named=True)):
         target = torch.tensor(entry["target"][2], device=device).unsqueeze(0)
         point_cloud = (
             torch.tensor(entry["point_cloud"], device=device)
