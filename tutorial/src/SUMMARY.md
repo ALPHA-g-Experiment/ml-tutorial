@@ -9,3 +9,4 @@
     - [Setting up the Environment](./session_1/setup.md)
     - [Exploring the Data](./session_1/dataset.md)
     - [Data Preprocessing](./session_1/preprocessing.md)
+    - [Training the Baseline Model](./session_1/baseline_model.md)

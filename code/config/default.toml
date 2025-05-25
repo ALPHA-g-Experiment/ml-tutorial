@@ -1,0 +1,27 @@
+[data]
+cloud_size = 140
+
+[model]
+conv_feature_extractor_pre = [64]
+conv_feature_extractor_post = [128, 1024]
+fc_regressor = [512, 256]
+
+[model.input_transform_net]
+conv_feature_extractor = [64, 128, 1024]
+fc_regressor = [512, 256]
+
+[model.feature_transform_net]
+conv_feature_extractor = [64, 128, 1024]
+fc_regressor = [512, 256]
+
+[training]
+batch_size = 64
+max_epochs = 50
+
+[training.loss]
+
+[training.optimizer]
+lr = 0.001
+betas = [0.9, 0.999]
+eps = 1e-08
+weight_decay = 0.0
