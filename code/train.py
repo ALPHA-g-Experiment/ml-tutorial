@@ -15,6 +15,7 @@ from training.optimizer import build_optimizer
 from training.loop import train_one_epoch, test_one_epoch
 from training.loss import CustomLoss
 from torch.utils.data import DataLoader
+from tqdm import tqdm
 
 # Marginally faster, and no noticeable difference in accuracy. Silences PyTorch
 # suggestions to use "high" precision for matmul in a100.
@@ -72,7 +73,7 @@ with open(training_log, mode="w", newline="") as f:
     writer.writerow(["epoch", "training_loss", "validation_loss", "mean", "std"])
 
 best_loss = float("inf")
-for i in range(max_epochs):
+for i in tqdm(range(max_epochs)):
     train_loss = train_one_epoch(train_dataloader, model, loss_fn, optimizer, device)
     validation_loss, mean, std = test_one_epoch(
         validation_dataloader, model, loss_fn, device
