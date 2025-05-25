@@ -45,3 +45,20 @@ for each event.
 > - Write a script to plot predicted vertex position vs. true vertex position.
 > - Create a histogram of the residuals (predicted - true).
 > - Plot the residuals as a function of true z-position. Is there any pattern?
+
+If you finish early or are curious to experiment, try following the **bonus
+activity** to see how a small change can impact model performance. Otherwise,
+feel free to jump ahead to **Session 2**, where we'll explore the model in more
+depth.
+
+## Bonus Activity (Optional)
+
+You've now trained and evaluated a baseline model. Let's tweak one component to
+see what happens!
+
+Try changing the loss function
+[here](https://github.com/ALPHA-g-Experiment/ml-tutorial/blob/main/code/training/loss.py#L25)
+from **Mean Squared Error** to
+[**Mean Absolute Error**](https://docs.pytorch.org/docs/stable/generated/torch.nn.functional.l1_loss.html).
+
+Then retrain the model and evaluate it again.
