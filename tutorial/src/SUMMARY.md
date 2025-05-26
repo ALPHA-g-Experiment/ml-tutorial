@@ -10,3 +10,6 @@
     - [Exploring the Data](./session_1/dataset.md)
     - [Data Preprocessing](./session_1/preprocessing.md)
     - [Training and Evaluating the Baseline Model](./session_1/baseline_model.md)
+
+- [Session 2: Understanding and Improving the Model](./session_2/README.md)
+    - [Understanding the Model Architecture](./session_2/model_architecture.md)
