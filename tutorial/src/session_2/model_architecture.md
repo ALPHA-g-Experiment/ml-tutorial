@@ -67,3 +67,29 @@ This architecture consists of three main components:
 
     Note that this operation is inherently order-invariant, making it suitable
     for point clouds, where the order of points doesn't matter.
+
+3. **Fully Connected Regressor**:  
+    After pooling, we are left with a single `(B, F)` tensor; one global feature
+    vector per batch. The final step is to map this to our final prediction.
+
+    This is done by the
+    [regressor block](https://github.com/ALPHA-g-Experiment/ml-tutorial/blob/08000894aa2d97395ceb9646c42bc3952541d227/code/model/regressor.py#L36-L45),
+    a series of fully connected
+    [linear layers](https://docs.pytorch.org/docs/stable/generated/torch.nn.Linear.html),
+    each followed by batch normalization and ReLU activation.
+
+    > **Activity**:  
+    > Try passing a `(2, 1024)` tensor through an `nn.Linear(1024, 1)` layer and
+    > then a `ReLU()` to see how this maps feature vectors toward output
+    > predictions.
+
+You now understand the full architecture of `_TNet`. This structure is compact
+but powerful, and it is nearly the complete architecture of our model.
+
+> **Activity**:  
+> Open the
+> [full model](https://github.com/ALPHA-g-Experiment/ml-tutorial/blob/main/code/model/regressor.py#L55-L129)
+> and compare the `_TNet` class to the full `Regressor` class.  
+> What is the difference between them?  
+> Try sketching the full model using a diagram or by describing it in your own
+> words.
