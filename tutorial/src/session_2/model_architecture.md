@@ -47,3 +47,23 @@ This architecture consists of three main components:
     Together, these layers make up the entire feature extractor. Just basic
     operations, chained one after another. Once you break it down, there's no
     mystery!
+
+2. **Global Features Aggregation**:  
+    Once each point has been mapped to a higher-dimensional feature vector, we
+    need to summarize the entire collection of points into a single, fixed-size
+    representation.
+
+    This is done using a
+    [simple operation](https://github.com/ALPHA-g-Experiment/ml-tutorial/blob/08000894aa2d97395ceb9646c42bc3952541d227/code/model/regressor.py#L49)
+    known as
+    [max pooling](https://en.wikipedia.org/wiki/Pooling_layer). It takes the
+    maximum value across all points for each feature, resulting in a single
+    vector that captures the most significant features of the entire point
+    cloud.
+
+    > **Activity**:  
+    > Change the `net(x)` in the example above to an `x.max(dim=2).values`
+    > transformation and check the output values and shape.
+
+    Note that this operation is inherently order-invariant, making it suitable
+    for point clouds, where the order of points doesn't matter.
