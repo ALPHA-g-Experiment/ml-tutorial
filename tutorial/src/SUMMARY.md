@@ -14,3 +14,4 @@
 - [Session 2: Understanding and Improving the Model](./session_2/README.md)
     - [Understanding the Model Architecture](./session_2/model_architecture.md)
     - [Improving the Model](./session_2/learned_shift.md)
+    - [Hyperparameter Tuning](./session_2/hyperparameter_tuning.md)
