@@ -18,6 +18,11 @@ subset_df = complete_df.slice(offset=0, length=10000)
 subset_df.write_parquet("/path/to/subset.parquet")
 ```
 
+> **Activity:**  
+> - Create a training subset with 80% of the data.
+> - Create a validation subset with 10% of the data.
+> - Create a test subset with the remaining 10% of the data.
+
 Once you've created your splits, it's a good idea to repeat the **data
 exploration steps** on each one of them. Check the target distribution and point
 cloud sizes to make sure nothing looks unusual (which could affect the model's
