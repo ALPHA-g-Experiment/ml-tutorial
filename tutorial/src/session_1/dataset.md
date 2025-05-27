@@ -36,12 +36,14 @@ shape: (100_000, 2)
 ```
 
 Before training any model, it's important to **understand the structure and
-characteristics of the data**. In particular, ask yourself:
-- Where do annihilation events occur? A skewed distribution in vertex z
-positions might cause the model to "cheat" by always guessing the most common
-region.
-- Do all events have the same number of hits? Variable-length point clouds will 
-require special handling in the model architecture.
+characteristics of the data**.
+
+> **Activity:**  
+> - Where do annihilation events occur? A skewed distribution in vertex z
+>   positions might cause the model to "cheat" by always guessing the most
+>   common region.
+> - Do all events have the same number of hits? Variable-length point clouds
+>   will require special handling in the model architecture.
 
 To help you answer these questions, we've provided the script:
 `ml-tutorial/code/visualization.py`.
@@ -79,6 +81,13 @@ point_cloud, target = dataset[0]
 
 Try running the code above and plot some point clouds and their corresponding
 targets (annihilation vertices).
-- How does the `PointCloudDataset` handle variable-length point clouds?
-- After plotting some point clouds and their targets, would you be able to make
-  an educated guess about the target vertex position given a point cloud?
+
+> **Activity:**  
+> - Inspect the `PointCloudDataset` class. How does it handle variable-length
+>   point clouds?
+> - Using the first 10 events (indices 0-9), plot the point clouds and their
+>   targets. Do they look like you expected?
+> - Using the next 10 events (indices 10-19), plot the point clouds without
+>   their targets. Make an educated guess about the target vertex position
+>   based on the point cloud. Compare your guess with the actual target
+>   positions.
