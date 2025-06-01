@@ -15,3 +15,5 @@
     - [Understanding the Model Architecture](./session_2/model_architecture.md)
     - [Improving the Model](./session_2/learned_shift.md)
     - [Hyperparameter Tuning](./session_2/hyperparameter_tuning.md)
+
+- [Session 3: Presenting Your Results](./session_3/README.md)
