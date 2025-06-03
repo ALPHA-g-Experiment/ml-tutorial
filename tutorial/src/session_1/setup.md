@@ -31,8 +31,11 @@ container** with everything pre-installed.
 To enter the container's shell environment, run the following command:
 
 ```bash
-apptainer shell /path/to/container.sif
+apptainer exec --nv -B /path_1 -B /path_2 /path/to/container.sif /bin/bash
 ```
+
+where `/path_X` are paths you want to bind to the container, and
+`/path/to/container.sif` is the path to the provided Apptainer image file.
 
 ### Option B: Setting up a Local Python Environment
 
