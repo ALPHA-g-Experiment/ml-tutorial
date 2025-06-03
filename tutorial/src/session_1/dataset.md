@@ -86,7 +86,17 @@ targets (annihilation vertices).
 > - Inspect the `PointCloudDataset` class. How does it handle variable-length
 >   point clouds?
 > - Using the first 10 events (indices 0-9), plot the point clouds and their
->   targets. Do they look like you expected?
+>   targets. Do they look like you expected?  
+>   You can make a 3D scatter plot using `matplotlib`:
+>   ```python
+>   import matplotlib.pyplot as plt
+>
+>   fig = plt.figure()
+>   ax = fig.add_subplot(projection="3d")
+>
+>   ax.scatter(point_cloud[0], point_cloud[1], point_cloud[2])
+>   ax.scatter(0, 0, target.item(), color="red")
+>   ```
 > - Using the next 10 events (indices 10-19), plot the point clouds without
 >   their targets. Make an educated guess about the target vertex position
 >   based on the point cloud. Compare your guess with the actual target
