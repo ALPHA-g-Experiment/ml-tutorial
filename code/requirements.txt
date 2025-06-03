@@ -1,6 +1,6 @@
 dynaconf==3.2.11
 matplotlib==3.10.3
-numpy==2.2.5
-polars==1.29.0
+numpy==1.26.4
+polars-u64-idx==1.30.0
 torch==2.7.0
 tqdm==4.67.1

@@ -47,7 +47,7 @@ After installing uv, you can create and activate a virtual environment with the
 following commands:
 
 ```bash
-uv venv --python 3.10
+uv venv --python 3.12
 source .venv/bin/activate
 ```
 
