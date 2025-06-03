@@ -13,8 +13,8 @@ algorithms that:
 - Fit back to a common origin.
 
 In this tutorial, you'll work with a **deep learning-based approach**:
-- We provide you with a working model that predicts the vertex directly from a
-  cloud of hits.
+- We provide you with a working model that predicts the z-coordinate of the
+  vertex directly from a cloud of hits.
 - You'll explore how this model works and then experiment with ways to make it
   better.
 
