@@ -8,8 +8,8 @@ of the annihilation.
 
 In traditional reconstruction pipelines, this is done using geometry-based
 algorithms that:
-- Identify clusters of hits,
-- Attempt to form tracks,
+- Identify clusters of hits.
+- Attempt to form tracks.
 - Fit back to a common origin.
 
 In this tutorial, you'll work with a **deep learning-based approach**:
