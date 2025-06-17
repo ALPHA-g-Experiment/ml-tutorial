@@ -83,8 +83,9 @@ Try running the code above and plot some point clouds and their corresponding
 targets (annihilation vertices).
 
 > **Activity:**  
-> - Inspect the `PointCloudDataset` class. How does it handle variable-length
->   point clouds?
+> - Inspect the
+>   [`PointCloudDataset`](https://github.com/ALPHA-g-Experiment/ml-tutorial/blob/main/code/data/dataset.py#L5-L50)
+>   class. How does it handle variable-length point clouds?
 > - Using the first 10 events (indices 0-9), plot the point clouds and their
 >   targets. Do they look like you expected?  
 >   You can make a 3D scatter plot using `matplotlib`:
