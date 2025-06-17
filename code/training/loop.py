@@ -30,7 +30,7 @@ def train_one_epoch(dataloader, model, loss_fn, optimizer, device):
         optimizer.step()
         optimizer.zero_grad()
 
-        total_loss += loss.item()
+        total_loss += loss.detach().item()
 
     return total_loss / len(dataloader)
 
