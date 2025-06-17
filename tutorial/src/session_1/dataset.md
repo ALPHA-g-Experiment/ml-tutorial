@@ -76,7 +76,8 @@ from data.dataset import PointCloudDataset
 config = {"cloud_size": 140}
 dataset = PointCloudDataset("/path/to/dataset.parquet", config)
 
-point_cloud, target = dataset[0]
+index = 0 # First event
+point_cloud, target = dataset[index]
 ```
 
 Try running the code above and plot some point clouds and their corresponding
