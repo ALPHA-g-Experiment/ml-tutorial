@@ -15,3 +15,7 @@ influenced it.
 The detector records a series of 3D points left by charged particles resulting
 from the annihilation. Reconstructing the vertex from these points is what this
 tutorial is all about.
+
+If you'd like a visual overview of the ALPHA-g experiment,
+[this short animation by CERN](https://www.youtube.com/watch?v=prhmw9CavR0)
+provides an excellent introduction.
