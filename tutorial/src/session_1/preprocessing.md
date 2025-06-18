@@ -6,16 +6,17 @@ Before we can train a model, we need to split our dataset into three parts:
   training.
 - Test set: Used only at the end to evaluate final model performance.
 
-You can create these splits manually like:
+Create a new script in the `ml-tutorial/code` directory. You can then create
+these splits like:
 
 ```python
 import polars as pl
 
-complete_df = pl.read_parquet("/path/to/dataset.parquet")
+complete_df = pl.read_parquet("../data/raw_data.parquet")
 
 # Example: Take the first 10000 events
 subset_df = complete_df.slice(offset=0, length=10000)
-subset_df.write_parquet("/path/to/subset.parquet")
+subset_df.write_parquet("../data/first_10000.parquet")
 ```
 
 > **Activity:**  
