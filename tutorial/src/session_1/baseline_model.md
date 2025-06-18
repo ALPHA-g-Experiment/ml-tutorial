@@ -18,7 +18,7 @@ This will run a full training loop and create the following files in the
 - `config.toml`: the hyperparameters used during training.
 - `training_log.csv`: a CSV file with the training and validation loss at each
   epoch.
-- `model.pth`: the trained model.
+- `model.pt`: the trained model.
 
 Training the model can take a while depending on the size of your dataset, the
 number of epochs, and the hardware you are using. By default, the training

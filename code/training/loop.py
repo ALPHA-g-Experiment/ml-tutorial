@@ -2,7 +2,6 @@ import numpy as np
 import torch
 
 
-@torch.compile
 def train_one_epoch(dataloader, model, loss_fn, optimizer, device):
     """
     Run one training epoch.
@@ -31,12 +30,11 @@ def train_one_epoch(dataloader, model, loss_fn, optimizer, device):
         optimizer.step()
         optimizer.zero_grad()
 
-        total_loss += loss.item()
+        total_loss += loss.detach().item()
 
     return total_loss / len(dataloader)
 
 
-@torch.compile
 def test_one_epoch(dataloader, model, loss_fn, device):
     """
     Evaluate the model on a validation set.

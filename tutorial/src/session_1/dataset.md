@@ -7,11 +7,13 @@ Each event in the dataset (`ml-tutorial/data/raw_data.parquet`) contains:
 - A true vertex position: `(x, y, z)` i.e. the origin of the annihilation.
 - A set of 3D hit positions: `[(x1, y1, z1), ..., (xn, yn, zn)]`.
 
-```python
-import polars as pl
+You can get a quick overview of the dataset by launching a Python interpreter
+from the `ml-tutorial/code` directory and running the following code:
 
-df = pl.read_parquet("/path/to/ml_tutorial/data/raw_data.parquet")
-print(df)
+```python
+>>> import polars as pl
+>>> df = pl.read_parquet("../data/raw_data.parquet")
+>>> print(df)
 
 """
 shape: (100_000, 2)
@@ -68,23 +70,26 @@ training/batching process.
 We've provided a
 [PyTorch-compatible dataset class](https://github.com/ALPHA-g-Experiment/ml-tutorial/blob/main/code/data/dataset.py).
 It wraps a `.parquet` file and gives you easy access to the data in a
-PyTorch-friendly way:
+PyTorch-friendly way. Create a new Python script in the `ml-tutorial/code`
+directory:
 
 ```python
 from data.dataset import PointCloudDataset
 
 config = {"cloud_size": 140}
-dataset = PointCloudDataset("/path/to/dataset.parquet", config)
+dataset = PointCloudDataset("../data/raw_data.parquet", config)
 
-point_cloud, target = dataset[0]
+index = 0 # First event
+point_cloud, target = dataset[index]
 ```
 
 Try running the code above and plot some point clouds and their corresponding
 targets (annihilation vertices).
 
 > **Activity:**  
-> - Inspect the `PointCloudDataset` class. How does it handle variable-length
->   point clouds?
+> - Inspect the
+>   [`PointCloudDataset`](https://github.com/ALPHA-g-Experiment/ml-tutorial/blob/main/code/data/dataset.py#L5-L50)
+>   class. How does it handle variable-length point clouds?
 > - Using the first 10 events (indices 0-9), plot the point clouds and their
 >   targets. Do they look like you expected?  
 >   You can make a 3D scatter plot using `matplotlib`:
